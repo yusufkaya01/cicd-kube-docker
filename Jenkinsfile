@@ -9,6 +9,8 @@ pipeline {
     environment {
         registry = "yusufkayatr/vproappdock"
         registryCredential = 'dockerhub'
+        DOCKER_IMAGE = ""
+        
     }
 
     stages {
