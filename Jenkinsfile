@@ -12,9 +12,17 @@ pipeline {
         
         
     }
-    def dockerImage  = ""
+    
 
     stages {
+
+        stage('Initialize) {
+            steps {
+                script {
+                    def dockerImage  = ""
+                }
+            }
+        }
 
         stage('BUILD') {
             steps {
