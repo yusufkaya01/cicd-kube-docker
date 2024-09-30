@@ -53,7 +53,7 @@ pipeline {
         stage('Building App Image') {
             steps {
                 script {
-                    def dockerImage = docker.build("my-image:${BUILD_NUMBER}")
+                    dockerImage = docker.build("my-image:${BUILD_NUMBER}")
                 }
             }
         }
