@@ -4,7 +4,7 @@ pipeline {
 
     tools {
         maven 'Maven 3.9.6' // Specify the Maven version configured in Jenkins
-        nodejs 'NodeJS 22.9.0' // Use the name you set
+        nodejs 'NodeJS 20.17.0' // Use the name you set
     }
 
     environment {
@@ -96,7 +96,7 @@ pipeline {
                    -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml'''
                 }
 
-                timeout(time: 10, unit: 'MINUTES') {
+                timeout(time: 20, unit: 'MINUTES') {
                     waitForQualityGate abortPipeline: true
                 }
             }
