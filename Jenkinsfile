@@ -51,7 +51,7 @@ pipeline {
         stage('Building App Image') {
             steps {
                 script {
-                    def dockerImage = "${registry}:V${BUILD_NUMBER}"
+                    def dockerImage = docker.build("my-image:${BUILD_NUMBER}")
                 }
             }
         }
