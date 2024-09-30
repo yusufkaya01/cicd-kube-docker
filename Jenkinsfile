@@ -9,6 +9,7 @@ pipeline {
     environment {
         registry = "yusufkayatr/vproappdock"
         registryCredential = 'dockerhub'
+        def dockerImage  = ""
         
         
     }
@@ -16,13 +17,6 @@ pipeline {
 
     stages {
 
-        stage('Initialize) {
-            steps {
-                script {
-                    def dockerImage  = ""
-                }
-            }
-        }
 
         stage('BUILD') {
             steps {
@@ -62,7 +56,7 @@ pipeline {
         stage('Building App Image') {
             steps {
                 script {
-                    dockerImage = docker.build("my-image:${BUILD_NUMBER}")
+                    dockerImage = docker.build registry + ":$BUILD_NUMBER"
                 }
             }
         }
