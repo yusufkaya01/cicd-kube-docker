@@ -9,9 +9,10 @@ pipeline {
     environment {
         registry = "yusufkayatr/vproappdock"
         registryCredential = 'dockerhub'
-        def dockerImage  = ""
+        
         
     }
+    def dockerImage  = ""
 
     stages {
 
